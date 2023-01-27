@@ -1,0 +1,86 @@
+@use 'variables' 
+
+.container
+    padding: 10px
+
+.card
+    background-color: variables.$fourth-color
+    border-radius: 10px
+    overflow: hidden
+    max-width: 355px
+    display: flex
+    flex-direction: column
+
+    &__header
+        overflow: hidden
+        flex: 1 0 200px
+        background-image: url('../images/drawers.jpg')
+        background-repeat: no-repeat
+        background-position: center
+        background-size: cover
+
+    &__content
+        padding: 35px
+    &__title
+        font-size: 1.4em
+        color: variables.$primary-color
+        margin-bottom: 15px
+    &__text
+        font-size: 1.2em
+        color: variables.$second-color
+
+    &__footer
+        display: flex
+        height: 80px
+        padding: 30px
+        justify-content: space-between
+        align-items: center
+        .author
+            // background-color: tomato
+            display: grid
+            grid-template-columns: auto auto
+            align-items: center
+            column-gap: 15px
+            &__avatar
+                height: 50px
+                border-radius: 50%
+                grid-row: 1/3
+            &__name
+                font-weight: 700
+                font-size: 1.2em
+                color: variables.$primary-color
+            &__date
+                color: variables.$second-color
+                font-size: 1.1em
+        .share
+            &__ico
+                background-color: variables.$third-color
+                padding: 8px
+                border-radius: 50%
+                cursor: pointer
+            &__social
+                display: none
+                cursor: pointer
+
+            &__text
+                text-transform: uppercase
+                color: variables.$third-color
+                letter-spacing: 5px
+
+        &--active
+            background-color: variables.$primary-color
+            color: variables.$fourth-color
+        &--active .author
+            display: none
+        &--active .share
+            width: 100%
+            display: flex
+            justify-content: space-between
+            align-items: center
+            flex-direction: row-reverse
+        &--active .share__social
+            display: flex
+            gap: 20px
+            width: 100%
+            align-items: center
+
